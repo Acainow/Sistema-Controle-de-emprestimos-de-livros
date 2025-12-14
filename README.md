@@ -1,60 +1,82 @@
-DESCRIÇÃO
-Aplicação web em Laravel para gerenciar empréstimos de livros, seguindo o padrão CRUD. Permite cadastrar, visualizar, editar e excluir registros de forma simples, usando Blade Templates e Bootstrap
+# Sistema de Controle de Empréstimos de Livros
 
-FUNCIONALIDADES
-1-Listar todos os empréstimos
-2-Cadastrar novo empréstimo
-3-Editar empréstimos existentes
-4-Excluir empréstimos
-5-Exibir mensagem quando não há empréstimos
-6-Mostrar livro e autor do empréstimo
-7-Mostrar o nome da pessoa que realizou o empréstimo
-8-Registrar data de empréstimo e devolução
-9-Botões de ação para editar e excluir
-10-Interface responsiva com Bootstrap
+Aplicação web em **Laravel 12.x** para gerenciar empréstimos de livros, seguindo o padrão **CRUD**. Permite cadastrar, visualizar, editar e excluir registros de forma simples, usando **Blade Templates** e **Bootstrap 5**.
 
-TECNOLOGIAS
+## Funcionalidades
+1. Listar todos os empréstimos  
+2. Cadastrar novo empréstimo  
+3. Editar empréstimos existentes  
+4. Excluir empréstimos  
+5. Exibir mensagem quando não há empréstimos  
+6. Mostrar livro e autor do empréstimo  
+7. Mostrar o nome da pessoa que realizou o empréstimo  
+8. Registrar data de empréstimo e devolução  
+9. Botões de ação para editar e excluir  
+10. Interface responsiva com Bootstrap
 
-Backend: Laravel 12.x
-Frontend: Blade Templates e Bootstrap 5
-Banco de Dados: MySQL
-Controle de Versão: Git / GitHub
+## Tecnologias
+- **Backend:** Laravel 12.x, PHP 8.x  
+- **Frontend:** Blade Templates, Bootstrap 5, CSS  
+- **Banco de Dados:** MySQL  
+- **Controle de Versão:** Git / GitHub
 
-ESTRUTURA DO PROJETO
+## Estrutura do Projeto
+- app/Http/Controllers/EmprestimoController.php  
+- resources/views/layout.blade.php  
+- resources/views/emprestimos/index.blade.php  
+- resources/views/emprestimos/create.blade.php  
+- resources/views/emprestimos/edit.blade.php  
+- routes/web.php  
+- database/migrations/create_emprestimos_table.php
 
-app/Http/Controllers/EmprestimoController.php
-resources/views/layout.blade.php
-resources/views/emprestimos/index.blade.php
-resources/views/emprestimos/create.blade.php
-resources/views/emprestimos/edit.blade.php
-routes/web.php
-database/migrations/create_emprestimos_table.php
+## Rotas Principais
+As rotas CRUD para empréstimos são definidas com **Route::resource('emprestimos', EmprestimoController::class)**:
 
-ROTAS PRINCIPAIS
+- GET `/` ou `/emprestimos` → Listar todos os empréstimos  
+- GET `/emprestimos/create` → Formulário para novo empréstimo  
+- POST `/emprestimos` → Salvar novo empréstimo  
+- GET `/emprestimos/{id}/edit` → Editar empréstimo existente  
+- PUT/PATCH `/emprestimos/{id}` → Atualizar empréstimo  
+- DELETE `/emprestimos/{id}` → Excluir empréstimo  
 
-Route::resource('emprestimos', EmprestimoController::class)
+> A rota raiz `/` exibe diretamente a lista de empréstimos, facilitando o acesso.
 
-GET /emprestimos → Listar empréstimos
-GET /emprestimos/create → Formulário para novo empréstimo
-POST /emprestimos → Salvar empréstimo
-GET /emprestimos/{id}/edit → Editar empréstimo
-PUT/PATCH /emprestimos/{id} → Atualizar empréstimo
-DELETE /emprestimos/{id} → Excluir empréstimo
-
-EXECUTANDO LOCALMENTE
-
+## Executando Localmente
+1. Clone o repositório:  
 git clone <LINK_DO_REPOSITORIO>
+
+arduino
+Copiar código
+2. Entre na pasta do projeto:  
 cd nome-do-projeto
+
+csharp
+Copiar código
+3. Instale as dependências:  
 composer install
-copiar .env.example para .env e configurar o banco
+
+javascript
+Copiar código
+4. Copie o arquivo `.env.example` para `.env` e configure os dados do banco de dados.  
+5. Gere a chave do aplicativo Laravel:  
 php artisan key:generate
+
+csharp
+Copiar código
+6. Rode as migrations para criar as tabelas:  
 php artisan migrate
+
+markdown
+Copiar código
+7. Inicie o servidor de desenvolvimento:  
 php artisan serve
 
-Acesse no navegador: http://127.0.0.1:8000/emprestimos
+markdown
+Copiar código
+8. Acesse no navegador: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-CONTRIBUIÇÃO
-Issues e pull requests são bem-vindos
+## Contribuição
+Issues e Pull Requests são bem-vindos. Sinta-se à vontade para sugerir melhorias ou corrigir bugs.
 
-LICENÇA
+## Licença
 MIT License
