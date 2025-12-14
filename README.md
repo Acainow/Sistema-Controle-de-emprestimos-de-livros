@@ -1,59 +1,60 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+DESCRIÇÃO
+Aplicação web em Laravel para gerenciar empréstimos de livros, seguindo o padrão CRUD. Permite cadastrar, visualizar, editar e excluir registros de forma simples, usando Blade Templates e Bootstrap
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+FUNCIONALIDADES
+1-Listar todos os empréstimos
+2-Cadastrar novo empréstimo
+3-Editar empréstimos existentes
+4-Excluir empréstimos
+5-Exibir mensagem quando não há empréstimos
+6-Mostrar livro e autor do empréstimo
+7-Mostrar o nome da pessoa que realizou o empréstimo
+8-Registrar data de empréstimo e devolução
+9-Botões de ação para editar e excluir
+10-Interface responsiva com Bootstrap
 
-## About Laravel
+TECNOLOGIAS
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Backend: Laravel 12.x
+Frontend: Blade Templates e Bootstrap 5
+Banco de Dados: MySQL
+Controle de Versão: Git / GitHub
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+ESTRUTURA DO PROJETO
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+app/Http/Controllers/EmprestimoController.php
+resources/views/layout.blade.php
+resources/views/emprestimos/index.blade.php
+resources/views/emprestimos/create.blade.php
+resources/views/emprestimos/edit.blade.php
+routes/web.php
+database/migrations/create_emprestimos_table.php
 
-## Learning Laravel
+ROTAS PRINCIPAIS
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Route::resource('emprestimos', EmprestimoController::class)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+GET /emprestimos → Listar empréstimos
+GET /emprestimos/create → Formulário para novo empréstimo
+POST /emprestimos → Salvar empréstimo
+GET /emprestimos/{id}/edit → Editar empréstimo
+PUT/PATCH /emprestimos/{id} → Atualizar empréstimo
+DELETE /emprestimos/{id} → Excluir empréstimo
 
-## Laravel Sponsors
+EXECUTANDO LOCALMENTE
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+git clone <LINK_DO_REPOSITORIO>
+cd nome-do-projeto
+composer install
+copiar .env.example para .env e configurar o banco
+php artisan key:generate
+php artisan migrate
+php artisan serve
 
-### Premium Partners
+Acesse no navegador: http://127.0.0.1:8000/emprestimos
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+CONTRIBUIÇÃO
+Issues e pull requests são bem-vindos
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+LICENÇA
+MIT License
