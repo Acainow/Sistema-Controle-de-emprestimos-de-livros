@@ -63,7 +63,7 @@ php artisan migrate
 php artisan serve
 
 8. Acesse no navegador:
-http://127.0.0.1:8000
+http://127.0.0.1:8000 ou http://127.0.0.1:8000/emprestimos
 
 ## Contribuição
 Issues e Pull Requests são bem-vindos. Sinta-se à vontade para sugerir melhorias ou corrigir bugs.
