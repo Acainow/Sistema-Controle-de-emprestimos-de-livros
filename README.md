@@ -42,38 +42,28 @@ As rotas CRUD para empréstimos são definidas com **Route::resource('emprestimo
 > A rota raiz `/` exibe diretamente a lista de empréstimos, facilitando o acesso.
 
 ## Executando Localmente
-1. Clone o repositório:  
+1. Clone o repositório:
 git clone <LINK_DO_REPOSITORIO>
 
-arduino
-Copiar código
-2. Entre na pasta do projeto:  
+2. Entre na pasta do projeto:
 cd nome-do-projeto
 
-csharp
-Copiar código
-3. Instale as dependências:  
+3. Instale as dependências:
 composer install
 
-javascript
-Copiar código
-4. Copie o arquivo `.env.example` para `.env` e configure os dados do banco de dados.  
-5. Gere a chave do aplicativo Laravel:  
+4. Copie o arquivo `.env.example` para `.env` e configure os dados do banco de dados.
+
+5. Gere a chave do aplicativo Laravel:
 php artisan key:generate
 
-csharp
-Copiar código
-6. Rode as migrations para criar as tabelas:  
+6. Rode as migrations para criar as tabelas:
 php artisan migrate
 
-markdown
-Copiar código
-7. Inicie o servidor de desenvolvimento:  
+7. Inicie o servidor de desenvolvimento:
 php artisan serve
 
-markdown
-Copiar código
-8. Acesse no navegador: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+8. Acesse no navegador:
+http://127.0.0.1:8000
 
 ## Contribuição
 Issues e Pull Requests são bem-vindos. Sinta-se à vontade para sugerir melhorias ou corrigir bugs.
